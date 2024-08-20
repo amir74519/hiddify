@@ -1,1 +1,30 @@
-warp://188.114.99.65:864?ifp=40-80&ifps=40-100&ifpd=4-8&ifpm=m4#iran&&detour=warp://188.114.99.65:864?ifp=40-80&ifps=40-100&ifpd=4-8&ifpm=m4#germany 
+{
+"inbounds": [
+{
+"port": 987,
+"protocol": "warp",
+"settings": {
+"address": "188.114.98.230",
+"ifp": "40-80",
+"ifps": "40-100",
+"ifpd": "4-8",
+"ifpm": "m4"
+},
+"tag": "m4iran"
+}
+],
+"outbounds": [
+{
+"protocol": "warp",
+"settings": {
+"address": "188.114.98.230",
+"port": 987,
+"ifp": "40-80",
+"ifps": "40-100",
+"ifpd": "4-8",
+"ifpm": "m4"
+},
+"tag": "m4germany"
+}
+]
+}
