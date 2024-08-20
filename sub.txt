@@ -1,30 +1,26 @@
-{
-"inbounds": [
-{
-"port": 987,
-"protocol": "warp",
-"settings": {
-"address": "188.114.98.230",
-"ifp": "40-80",
-"ifps": "40-100",
-"ifpd": "4-8",
-"ifpm": "m4"
-},
-"tag": "m4iran"
-}
-],
-"outbounds": [
-{
-"protocol": "warp",
-"settings": {
-"address": "188.114.98.230",
-"port": 987,
-"ifp": "40-80",
-"ifps": "40-100",
-"ifpd": "4-8",
-"ifpm": "m4"
-},
-"tag": "m4germany"
-}
-]
-}
+        {
+            "type": "direct",
+            "tag": "warp-IPv4",
+            "detour": "warp",
+            "domain_strategy": "ipv4_only"
+        },
+        {
+            "type": "direct",
+            "tag": "warp-IPv6",
+            "detour": "warp",
+            "domain_strategy": "ipv6_only"
+        },
+        {
+            "type": "wireguard",
+            "tag": "warp",
+            "server": "162.159.192.1", // IPv6 地址 2606:4700:d0::a29f:c001，或填写域名 engage.cloudflareclient.com
+            "server_port": 2408,
+            "local_address": [
+                "172.16.0.2/32",
+                "2606:4700::/128" // 粘贴你的 warp IPv6 地址，结尾加 /128
+            ],
+            "private_key": "", // 粘贴你的 "private_key" 值
+            "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+            "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
+            "mtu": 1280
+        }
